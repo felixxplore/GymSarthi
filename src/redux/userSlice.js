@@ -314,7 +314,7 @@ const userSlice = createSlice({
       })
       .addCase(markAttendance.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.user = action.payload;
+        // state.user = action.payload;
         // Optionally update the user data with the attendance information if needed
         alert(action.payload.message); // Show a success message from the response
       })

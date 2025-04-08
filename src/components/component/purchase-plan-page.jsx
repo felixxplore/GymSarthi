@@ -179,9 +179,9 @@ export function PurchasePlanPage() {
         if (result.success) {
           setShowThankYou(true);
           dispatch(getUserDetails());
-          setTimeout(() => {
+          // setTimeout(() => {
             navigate("/member-dashboard");
-          }, 1000);
+          // }, 100);
         } else {
           setErrorMessage(
             result.message || "Payment failed. Please try again."
