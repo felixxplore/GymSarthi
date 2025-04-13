@@ -17,7 +17,7 @@ const server = http.createServer(app);
 // Initialize Socket.IO with the server
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:5173", // Specify the allowed origin (frontend URL)
+    origin:  process.env.CLIENT_ORIGIN, // Specify the allowed origin (frontend URL)
     methods: ["GET", "POST"],
   },
 });
@@ -26,7 +26,7 @@ const io = socketIo(server, {
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "http://localhost:5173", // fronted URL for development
+    origin: process.env.CLIENT_ORIGIN, // fronted URL for development
   })
 );
 
