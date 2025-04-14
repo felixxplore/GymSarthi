@@ -1,8 +1,7 @@
 const Plan = require("../models/Plan");
 const Trainer = require("../models/Trainer");
 const User = require("../models/User");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-const sendConfirmationEmail = require("../utils/emailService");
+ const sendConfirmationEmail = require("../utils/emailService");
 const multer = require("multer");
 
 const createPlan = async (req, res) => {
