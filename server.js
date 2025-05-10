@@ -25,12 +25,14 @@ const io = socketIo(server, {
 
 // Middleware for JSON body parsing
 app.use(bodyParser.json());
-app.use(
-  cors({
-    origin: process.env.CLIENT_ORIGIN, // fronted URL for development
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: process.env.CLIENT_ORIGIN, // fronted URL for development
+//     credentials: true,
+//   })
+// );
+
+app.use(cors({ origin: '*' }));
 
 app.use(express.json());
 // Cloudinary configuration
