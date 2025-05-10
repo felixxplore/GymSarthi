@@ -43,7 +43,7 @@ export default function ForgotPassword() {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/forgotPassword/forgot-password",
+        `${import.meta.env.VITE_BASE_URL}/forgotPassword/forgot-password`,
         { email }
       );
       setGeneratedOtp(res.data.otp); // Save OTP from backend
@@ -62,7 +62,7 @@ export default function ForgotPassword() {
     setCooldown(30); // Reset cooldown
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/forgotPassword/forgot-password",
+         `${import.meta.env.VITE_BASE_URL}/forgotPassword/forgot-password`,
         { email }
       );
       setGeneratedOtp(res.data.otp); // Save new OTP from backend
@@ -110,7 +110,7 @@ export default function ForgotPassword() {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5000/api/forgotPassword/reset-password",
+        `${import.meta.env.VITE_BASE_URL}/forgotPassword/reset-password`,
         { email, otp: otp.join(""), newPassword }
       );
       setMessage("Password reset successful. Redirecting to login...");

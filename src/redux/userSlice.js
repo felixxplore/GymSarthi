@@ -215,9 +215,7 @@ const userSlice = createSlice({
   name: "user",
   initialState: {
     user: JSON.parse(localStorage.getItem("user")) || null,
-    token: localStorage.getItem("token")
-      ? JSON.parse(localStorage.getItem("token")).value
-      : null,
+    token: localStorage.getItem("token") ? localStorage.getItem("token") : null,
     plans: [],
     tasks: [],
     trainers: [],

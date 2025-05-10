@@ -23,8 +23,7 @@ const MemberTrainerProfile = () => {
     <Button>No Trainers...</Button>;
   }
 
-  const backendUrl = "http://localhost:5000";
-  
+   
     return (
       <MemberSidePanel>
 <div className="flex items-start justify-start min-h-screen p-6 bg-white mt-[-70px]">

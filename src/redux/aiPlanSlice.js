@@ -7,9 +7,13 @@ export const generateAIPlan = createAsyncThunk(
   "aiPlan/generate",
   async (formData, { rejectWithValue }) => {
     try {
+
+      console.log("form data : ",formData)
       const res = await api.post("/generate-plan", formData);
-      return res.data.data;
+      console.log("gemini answer:",res);
+      return res.data;
     } catch (err) {
+      console.log("gemini error",err1  )
       return rejectWithValue(
         err.response?.data?.error || "AI Plan generation failed"
       );

@@ -59,8 +59,7 @@ const TrainerSidePanel = ({ children }) => {
     setActiveLink(link); // Update the active link
   };
 
-  const backendUrl = "http://localhost:5000";
-
+ 
 
 
 //   return (

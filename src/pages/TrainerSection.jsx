@@ -57,8 +57,7 @@ const TrainersSection = () => {
   const toggleExpand = (index) => {
     setExpandedTrainer((prevIndex) => (prevIndex === index ? null : index));
   };
-  const backendUrl = "http://localhost:5000";
-
+ 
   return (
     <section className="py-16 sm:py-24 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -119,8 +119,7 @@ export const AdminProfile = () => {
     }
   };
 
-  const backendUrl = "http://localhost:5000";
-
+ 
   if (!adminInfo) {
     return <div>Loading...</div>;
   }

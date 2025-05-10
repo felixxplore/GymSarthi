@@ -123,8 +123,7 @@
 //     return <Button>Trainer No data...</Button>;
 //   }
 
-//   const backendUrl = "http://localhost:5000";
-
+ 
 //   return (
 //     <div className="flex flex-col w-full gap-6 p-6 sm:gap-8 sm:p-10 mt-[-90px]" >
 

@@ -60,8 +60,7 @@ const AdminSidePanel = ({ children }) => {
     setActiveLink(link);
   };
 
-  const backendUrl = "http://localhost:5000";
-
+ 
   return (
     // <div className="flex w-full min-h-screen bg-background dark:text-foreground">
     //   {/* Sidebar */}

@@ -69,7 +69,7 @@ const AdminSlotManagement = () => {
       // Prevent duplicate API calls
     //   const data = await getUserDetailsById(userId);
 
-    const response = await fetch(`http://localhost:5000/api/user/userinfo/${userId}`); // Backend API
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/user/userinfo/${userId}`); // Backend API
     const data = await response.json();
       setUsers((prev) => ({ ...prev, [userId]: data })); // Save user details
     }

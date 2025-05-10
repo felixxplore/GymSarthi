@@ -32,8 +32,7 @@ const MemberProfile = () => {
     email: user.email,
   });
 
-  const backendUrl = "http://localhost:5000";
-
+ 
   useEffect(() => {
     if (user?.photoUrl) {
       setImageUrl(user.photoUrl); // Update image URL when user photo changes

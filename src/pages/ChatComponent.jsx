@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 import { MessageCircle } from "lucide-react";
 // import notificationSound from "./notification-20-270145.mp3";
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect(`${import.meta.env.VITE_BASE_URL_TEMP}`);
 
 const ChatComponent = () => {
   const [messages, setMessages] = useState([]);
@@ -52,7 +52,7 @@ const ChatComponent = () => {
   useEffect(() => {
     const fetchOldChats = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/chat");
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL_TEMP}/chat`);
         const formattedMessages = response.data.map((msg) => ({
           id: msg._id,
           text: msg.message,

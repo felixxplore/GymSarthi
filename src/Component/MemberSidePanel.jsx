@@ -44,8 +44,7 @@ const MemberSidePanel = ({ children }) => {
     setActiveLink(location.pathname);
   }, [location.pathname]); // Dependency array includes pathname
 
-  const backendUrl = "http://localhost:5000";
-
+ 
   // return (
   //   <div className="flex w-full min-h-screen bg-background dark:text-foreground">
   //     {/* Hamburger Menu Button (Mobile Only) */}
