@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 //   })
 // );
 
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: '*', credentials:true }));
 
 app.use(express.json());
 // Cloudinary configuration
