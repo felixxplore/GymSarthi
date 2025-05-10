@@ -17,8 +17,8 @@ const server = http.createServer(app);
 // Initialize Socket.IO with the server
 const io = socketIo(server, {
   cors: {
-    origin:  process.env.CLIENT_ORIGIN || "https://gym-sarthi-xtkp.vercel.app", 
-    credentials: true,// Specify the allowed origin (frontend URL)
+    origin: process.env.CLIENT_ORIGIN || "https://gym-sarthi-xtkp.vercel.app",
+    credentials: true, // Specify the allowed origin (frontend URL)
     methods: ["GET", "POST"],
   },
 });
@@ -161,6 +161,16 @@ require("./cronJobs"); // Import cron jobs to automate tasks
 
 // Start the server (HTTP and WebSocket)
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
-});
+// server.listen(PORT, () => {
+//   console.log(`Server started on port ${PORT}`);
+// });
+
+module.exports = server;
+
+// ✅ Only run locally
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  server.listen(PORT, () => {
+    console.log(`Server running locally on port ${PORT}`);
+  });
+}
