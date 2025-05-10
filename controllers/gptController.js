@@ -2,7 +2,11 @@ const axios = require("axios");
 require("dotenv").config();
 
 exports.generatePlan = async (req, res) => {
+
+  console.log("Start woring ---------------------------------------------")
   try {
+
+
     const {
       name,
       gender,
@@ -37,7 +41,7 @@ Make the output clean and organized by day.
     `;
 
     const response = await axios.post(
-      "https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=" +
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" +
         process.env.GEMINI_API_KEY,
       {
         contents: [
@@ -59,7 +63,7 @@ Make the output clean and organized by day.
 
     res.status(200).json({ success: true, data: generatedText });
   } catch (error) {
-    console.error("Gemini error:", error.response?.data || error.message);
+    console.error("Gemini error -----------------------------------------------------------------------:", error);
     res.status(500).json({
       success: false,
       message: "Gemini AI generation failed",
