@@ -17,7 +17,7 @@ const server = http.createServer(app);
 // Initialize Socket.IO with the server
 const io = socketIo(server, {
   cors: {
-    origin:  process.env.CLIENT_ORIGIN, 
+    origin:  process.env.CLIENT_ORIGIN || "https://gym-sarthi-xtkp.vercel.app", 
     credentials: true,// Specify the allowed origin (frontend URL)
     methods: ["GET", "POST"],
   },
@@ -25,14 +25,16 @@ const io = socketIo(server, {
 
 // Middleware for JSON body parsing
 app.use(bodyParser.json());
-// app.use(
-//   cors({
-//     origin: process.env.CLIENT_ORIGIN, // fronted URL for development
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: process.env.CLIENT_ORIGIN || "https://gym-sarthi-xtkp.vercel.app", // fronted URL for development
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
-app.use(cors({ origin: '*', credentials:true }));
+// app.use(cors({ origin: '*', credentials:true }));
 
 app.use(express.json());
 // Cloudinary configuration
