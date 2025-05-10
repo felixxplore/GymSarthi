@@ -1,23 +1,17 @@
-"use client";
-
 import { useEffect, useCallback, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
+
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { AlertCircle, Loader2 } from "lucide-react";
+
 import { bookClass, cancelBooking, fetchClasses } from "@/redux/classSlice";
 import MemberSidePanel from "./MemberSidePanel";
-import { ClassScheduler } from "@/components/component/Calendar/ClassScheduler";
 import { ClassBookingCalendar } from "@/components/component/ClassBooking/ClassBookingCalendar";
+import { Loader2 } from "lucide-react";
 
 // member class booking
 export function MemberClassBooking() {
   const dispatch = useDispatch();
-  const { classes, status, error } = useSelector((state) => state.class);
+  const { classes, status } = useSelector((state) => state.class);
   const calendarRef = useRef(null);
 
   useEffect(() => {
@@ -160,16 +154,16 @@ export function MemberClassBooking() {
       <div className=" items-start justify-start min-h-screen p-6 bg-white mt-[-70px]">
         <header className="w-full px-4 mx-auto mb-6 max-w-7xl md:px-4">
           <h1 className="text-3xl font-semibold text-black dark:text-white">
-          Welcome to Class Booking
+            Welcome to Class Booking
           </h1>
           <p className="mt-1 text-black dark:text-gray-400">
-          Manage your gym classes effortlessly and stay on track with your schedule.
+            Manage your gym classes effortlessly and stay on track with your
+            schedule.
           </p>
         </header>
 
         <main className="min-h-screen p-4 text-white bg-gray-900 md:p-8 rounded-3xl">
           <div className="mx-auto max-w-7xl">
-         
             <ClassBookingCalendar classes={classes} />
           </div>
         </main>
